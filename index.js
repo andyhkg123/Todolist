@@ -125,12 +125,10 @@ function displaytodo() {
       localStorage.setItem("todos", JSON.stringify(todos));
       displaytodo();
     });
-
     todoEdit.addEventListener("click", () => {
-      // Create input and select elements for editing
       const EditContent = document.createElement("input");
       EditContent.type = "text";
-      EditContent.value = todo.content; // Use value to pre-fill the input field
+      EditContent.value = todo.content;
 
       const EditPriority = document.createElement("select");
       const options = [
@@ -144,14 +142,18 @@ function displaytodo() {
         option.text = optionData.text;
         EditPriority.appendChild(option);
       });
-
       EditPriority.value = todo.priority;
 
       EditContent.classList.add("Task_content");
       EditPriority.classList.add("Task_priority");
-      blank.replaceChild(EditContent, todoContent);
-      blank.replaceChild(EditPriority, todoPriority);
-      EditContent.focus();
+
+      // Replace todoContent and todoPriority if they exist in the DOM
+      if (blank.contains(todoContent)) {
+        blank.replaceChild(EditContent, todoContent);
+      }
+      if (blank.contains(todoPriority)) {
+        blank.replaceChild(EditPriority, todoPriority);
+      }
 
       todoEdit.innerHTML = `Save`;
 
