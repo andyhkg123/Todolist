@@ -60,6 +60,7 @@ function displaytodo() {
   const todolist = document.querySelector(".right");
   todolist.innerHTML = "";
 
+  //////adding tasks
   todos.forEach((todo) => {
     const hoist = document.createElement("div");
     const blank = document.createElement("div");
@@ -90,16 +91,40 @@ function displaytodo() {
     blank.appendChild(todoPriority);
     func.appendChild(checking);
     checking.appendChild(checkingboxmessage);
-    checking.innerHTML = "Done";
     checking.appendChild(checkbox);
     func.appendChild(todoEdit);
     func.appendChild(todoDel);
+    checkingboxmessage.innerHTML = "Unfinished";
 
     todoContent.innerHTML = `${todo.content}`;
     todoPriority.innerHTML = `${todo.priority}`;
     todoEdit.innerHTML = `Edit`;
     todoDel.innerHTML = `Del`;
-  });
 
+    /////making checkboxes
+
+    if (todo.done) {
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
+
+    checkbox.addEventListener("change", (e) => {
+      todo.done = e.target.checked;
+      localStorage.setItem("todos", JSON.stringify(todos));
+      if (todo.done) {
+        checkingboxmessage.innerHTML = "Done";
+      } else {
+        checkingboxmessage.innerHTML = "Unfinished";
+      }
+    });
+
+    todoDel.addEventListener("click", (e) => {
+      todos = todos.filter((x) => x !== todo);
+      console.log(todos);
+      localStorage.setItem("todos", JSON.stringify(todos));
+      displaytodo();
+    });
+  });
   //todoEdit.addEventListener("click", function
 }
