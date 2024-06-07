@@ -54,6 +54,13 @@ window.addEventListener("load", () => {
     // Determine the end index
     let end = Math.min(initial + 5, todos.length);
 
+    const notification = document.querySelector("#notification");
+    if (todos.length > end) {
+      notification.style.display = "block";
+    } else {
+      notification.style.display = "none";
+    }
+
     // Display tasks from the current range
     for (let i = initial; i < end; i++) {
       const todo = todos[i];
@@ -92,8 +99,8 @@ window.addEventListener("load", () => {
       func.appendChild(todoDel);
       checkingboxmessage.innerHTML = "Unfinished";
 
-      todoContent.innerHTML = `${todo.content}`;
-      todoPriority.innerHTML = `${todo.priority}`;
+      todoContent.innerHTML = `Task ${i + 1}:<br>${todo.content}`;
+      todoPriority.innerHTML = `Priority:${todo.priority}`;
       todoEdit.innerHTML = `Edit`;
       todoDel.innerHTML = `Del`;
 
