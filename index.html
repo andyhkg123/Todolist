@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="Task">
+          <div>Task</div>
+          <input
+            type="input"
+            id="taskbtn"
+            name="taskName"
+            value=""
+            placeholder="input your task"
+          />
+        </div>
+
+        <div class="priority">
+          <div>priority</div>
+          <div id="PrioritySection">
+            <select id="prioritySelection" name="priorityName">
+              <option value="">--Please choose an option--</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="addtask">
+          <div id="add">
+            <input type="button" id="addbtn" value="add" />
+          </div>
+          <div id="clear">
+            <input type="button" id="clrbtn" value="clear" />
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="hoist">
+          <div>
+            <div class="Task_content"></div>
+            <div class="Task_priority">Medium</div>
+          </div>
+          <div class="function">
+            <div class="checking">
+              <div class="checkboxmessage">Done</div>
+              <input type="checkbox" class="todocheckbox" />
+            </div>
+            <div class="Task_edit">Edit</div>
+            <div class="Task_del">Del</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
