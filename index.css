@@ -53,6 +53,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url(./tiger.jpg);
+  background-size: 25%;
 }
 
 .priority {
@@ -72,7 +74,8 @@ body {
 .right {
   height: 100%;
   width: 100%;
-  background-color: blueviolet;
+  background: url("./dragon.jpg");
+  background-size: contain;
   border-radius: 15px;
   margin: 0;
 }
@@ -90,7 +93,8 @@ body {
 .priority {
   height: 25%;
   width: 100%;
-  background-color: red;
+  background: url(./kirin.png);
+  background-size: 18%;
   border-radius: 15px;
   align-items: center;
   justify-content: center;
@@ -102,7 +106,19 @@ body {
   justify-content: space-evenly;
   height: 25%;
   width: 100%;
-  background-color: pink;
+  background: url(./bird.jpg);
+  background-size: 18%;
+  background-position-y: center top;
+  border-radius: 15px;
+}
+
+.notitask {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 25%;
+  width: 100%;
+  background-size: 10%;
   border-radius: 15px;
 }
 
@@ -110,7 +126,8 @@ body {
   display: flex;
   height: 8%;
   width: 100%;
-  background-color: pink;
+  background: url(./cloud.jpg);
+  background-size: 10%;
   border-radius: 15px;
   justify-content: center;
   align-items: center;
@@ -152,7 +169,7 @@ body {
 
 .notification {
   display: none; /* Initially hidden */
-  color: red; /* Example styling */
+  color: blue; /* Example styling */
 }
 
 input[type="text"] {
@@ -160,4 +177,14 @@ input[type="text"] {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+}
+
+.Task_edit:hover {
+  background: green;
+  cursor: pointer !important;
+}
+
+.Task_del:hover {
+  background: red;
+  cursor: pointer !important;
 }

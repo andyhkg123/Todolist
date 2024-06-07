@@ -43,6 +43,7 @@ window.addEventListener("load", () => {
   clrStorage.addEventListener("click", () => {
     localStorage.clear();
     todos = [];
+    initial = 0;
     displayTodo();
   });
 

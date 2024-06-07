@@ -10,7 +10,20 @@
     <div class="container">
       <div class="left">
         <div class="Task">
-          <div>Task</div>
+          <div
+            style="
+              width: auto;
+              height: auto;
+              border-radius: 10px;
+              background: hsla(138, 91%, 57%, 0.702);
+              color: red;
+              font-weight: bolder;
+              font-style: oblique;
+              font-size: 1.5em;
+            "
+          >
+            Task
+          </div>
           <input
             type="input"
             id="taskbtn"
@@ -21,7 +34,18 @@
         </div>
 
         <div class="priority">
-          <div>priority</div>
+          <div
+            style="
+              border-radius: 15px;
+              background: hsla(185, 72%, 57%, 0.702);
+              color: red;
+              font-weight: bolder;
+              font-style: oblique;
+              font-size: 1.5em;
+            "
+          >
+            priority
+          </div>
           <div id="PrioritySection">
             <select id="prioritySelection" name="priorityName">
               <option value="">--Please choose an option--</option>
@@ -44,7 +68,7 @@
 
       <div class="topup_function">
         <div class="right">
-          <div class="hoist">
+          <!-- <div class="hoist">
             <div class="blank">
               <div class="Task_content"></div>
               <div class="Task_priority">Medium</div>
@@ -57,15 +81,26 @@
               <div class="Task_edit">Edit</div>
               <div class="Task_del">Del</div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="pagebtn">
           <div id="back">
             <input type="button" id="backbtn" value="back" />
           </div>
 
-          <div class="addtask">
-            <div id="notification" class="notification">
+          <div class="notitask">
+            <div
+              id="notification"
+              class="notification"
+              style="
+                border-radius: 15px;
+                background: hsla(185, 72%, 57%, 0.702);
+                color: red;
+                font-weight: bolder;
+                font-style: oblique;
+                font-size: 1.5em;
+              "
+            >
               You have more tasks. Click Next to view them.
             </div>
           </div>
