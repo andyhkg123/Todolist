@@ -84,6 +84,14 @@ body {
   margin-top: 1em;
 }
 
+.blank {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
 .right .hoist .function {
   display: flex;
   flex-direction: column;

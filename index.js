@@ -12,7 +12,7 @@ window.addEventListener("load", () => {
 
   tasks.value = tasks_stored;
 
-  tasks.addEventListener("change", (e) => {
+  tasks.addEventListener("blur", (e) => {
     localStorage.setItem("tasksdata", e.target.value);
   });
 
@@ -74,6 +74,7 @@ function displaytodo() {
     const todoDel = document.createElement("div");
 
     hoist.classList.add("hoist");
+    blank.classList.add("blank");
     todoContent.classList.add("Task_content");
     todoPriority.classList.add("Task_priority");
     func.classList.add("function");
@@ -119,12 +120,50 @@ function displaytodo() {
       }
     });
 
-    todoDel.addEventListener("click", (e) => {
+    todoDel.addEventListener("click", () => {
       todos = todos.filter((x) => x !== todo);
-      console.log(todos);
       localStorage.setItem("todos", JSON.stringify(todos));
       displaytodo();
     });
+
+    todoEdit.addEventListener("click", () => {
+      // Create input and select elements for editing
+      const EditContent = document.createElement("input");
+      EditContent.type = "text";
+      EditContent.value = todo.content; // Use value to pre-fill the input field
+
+      const EditPriority = document.createElement("select");
+      const options = [
+        { value: "High", text: "High" },
+        { value: "Medium", text: "Medium" },
+        { value: "Low", text: "Low" },
+      ];
+      options.forEach((optionData) => {
+        const option = document.createElement("option");
+        option.value = optionData.value;
+        option.text = optionData.text;
+        EditPriority.appendChild(option);
+      });
+
+      EditPriority.value = todo.priority;
+
+      EditContent.classList.add("Task_content");
+      EditPriority.classList.add("Task_priority");
+      blank.replaceChild(EditContent, todoContent);
+      blank.replaceChild(EditPriority, todoPriority);
+      EditContent.focus();
+
+      todoEdit.innerHTML = `Save`;
+
+      todoEdit.addEventListener("click", function saveChanges() {
+        todo.content = EditContent.value;
+        todo.priority = EditPriority.value;
+        localStorage.setItem("todos", JSON.stringify(todos));
+        displaytodo();
+
+        // Remove the event listener to prevent multiple save operations
+        todoEdit.removeEventListener("click", saveChanges);
+      });
+    });
   });
-  //todoEdit.addEventListener("click", function
 }
