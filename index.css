@@ -41,11 +41,12 @@ body {
   width: 100%;
   display: flex;
   border-radius: 25px;
+  flex-direction: column;
 }
 
 .left {
   height: 50%;
-  width: 20%;
+  width: 100%;
 }
 
 .Task {
@@ -60,38 +61,46 @@ body {
   align-items: center;
 }
 .topup_function {
+  position: relative;
+  top: -7%;
   align-items: flex-start;
   justify-content: flex-start;
   height: 100%;
-  width: 80%;
+  width: 100%;
   margin: 0px;
 }
 .right {
-  height: 95%;
+  height: 100%;
   width: 100%;
   background-color: blueviolet;
   border-radius: 15px;
+  margin: 0;
 }
 
 .Task {
-  height: 30%;
+  height: 25%;
   width: 100%;
   background-color: aqua;
   border-radius: 15px;
   margin-right: 20em;
+  align-items: center;
+  justify-content: center;
 }
 
 .priority {
-  height: 30%;
+  height: 25%;
   width: 100%;
   background-color: red;
   border-radius: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 .addtask {
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
-  height: 10%;
+  height: 25%;
   width: 100%;
   background-color: pink;
   border-radius: 15px;
@@ -99,10 +108,12 @@ body {
 
 .pagebtn {
   display: flex;
-  height: 5%;
+  height: 8%;
   width: 100%;
   background-color: pink;
   border-radius: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 #back {
