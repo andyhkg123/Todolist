@@ -66,6 +66,9 @@ function displaytodo() {
     const todoContent = document.createElement("div");
     const todoPriority = document.createElement("div");
     const func = document.createElement("div");
+    const checking = document.createElement("div");
+    const checkingboxmessage = document.createElement("div");
+    const checkbox = document.createElement("input");
     const todoEdit = document.createElement("div");
     const todoDel = document.createElement("div");
 
@@ -73,6 +76,10 @@ function displaytodo() {
     todoContent.classList.add("Task_content");
     todoPriority.classList.add("Task_priority");
     func.classList.add("function");
+    checking.classList.add("checking");
+    checkingboxmessage.classList.add("checkboxmessage");
+    checkbox.type = "checkbox";
+    checkbox.classList.add("todocheckbox");
     todoEdit.classList.add("Task_edit");
     todoDel.classList.add("Task_del");
 
@@ -81,6 +88,10 @@ function displaytodo() {
     hoist.appendChild(func);
     blank.appendChild(todoContent);
     blank.appendChild(todoPriority);
+    func.appendChild(checking);
+    checking.appendChild(checkingboxmessage);
+    checking.innerHTML = "Done";
+    checking.appendChild(checkbox);
     func.appendChild(todoEdit);
     func.appendChild(todoDel);
 
