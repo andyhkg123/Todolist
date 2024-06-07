@@ -102,8 +102,4 @@ function displaytodo() {
   });
 
   //todoEdit.addEventListener("click", function
-
-  todoDel.addEventListener("click", (e) => {
-    localStorage.removeItem("prioritydata", e.target.value);
-  });
 }
